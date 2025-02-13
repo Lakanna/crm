@@ -2,13 +2,13 @@ import React from 'react';
 import Header from '@/app/components/Header';
 
 export interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 function page({ params }: PageProps) {
   return (
     <>
-      <Header>Companie Page:{params.id} </Header>
+      <Header>Companie Page:{params.then()} </Header>
     </>
   );
 }
